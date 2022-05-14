@@ -22,6 +22,7 @@ include "logic.php"
   
 <div class="container mt-5">
 
+<!-- Display any info -->
   <?php if(isset($_REQUEST['info'])){?>
   <?php if($_REQUEST['info'] == "added"){?>
     <div class="alert alert-success" role="alert">
@@ -39,11 +40,13 @@ include "logic.php"
   <?php }?> 
   <?php } ?>
 
+<!-- Create a new Post button -->
   <div class="text-center">
     <a href="create.php" class="btn btn-outline-dark"> + Create a new post</a>
   </div>
 </div>
 
+<!-- Display posts from database -->
 <div class="row">
  <?php foreach ($query as $q){ ?>
    <div class="col-4 d-flex justify-center-center align-items-center">

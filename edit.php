@@ -4,10 +4,6 @@ include "logic.php"
 
 ?>
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +26,7 @@ include "logic.php"
     <input type="text" hidden name="id" value="<?php echo $q["id"];?>">
     <input type="text" name="title" placeholder="Blog Title" class="form-control bg-dark text-white my-3 text-center" value="<?php echo $q["title"];?>">
     <textarea name="content" class="form-control bg-dark text-white my-3"><?php echo $q["content"];?></textarea>
-    <button name="new post" class="btn btn-dark"> Update</button>
+    <button name="update" class="btn btn-dark"> Update</button>
   </form>
 <?php }?>
 

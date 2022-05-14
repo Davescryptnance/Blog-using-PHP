@@ -1,17 +1,20 @@
 <?php
 
+// Initialize a database connection
 $conn = mysqli_connect("Localhost", "root", "", "packetcode-test");
 
 
+// Destroy if not possible to create a connection
 if(!$conn){
   echo "<h3 class='container bg-dark text-center p-3 text-warning rounded-lg mt-5'>Not able to establish Database Connection</h3>";
 }
 
+// Get data to display on index page
 $sql = "SELECT * FROM data";
 $query = mysqli_query($conn, $sql);
 
 
-
+// Create a new post
 
 if(isset($_REQUEST["new_post"])){
   $title = $_REQUEST["title"];
@@ -24,6 +27,8 @@ if(isset($_REQUEST["new_post"])){
   exit();
 }
 
+
+// Get post data based on id
 if(isset($_REQUEST['id'])){
   $id = $_REQUEST['id'];
 
@@ -31,6 +36,7 @@ if(isset($_REQUEST['id'])){
   $query = mysqli_query($conn, $sql);
 }
 
+// Update a post
 if(isset($_REQUEST['update'])){
   $id = $_REQUEST['id'];
   $title = $_REQUEST["title"];
@@ -43,6 +49,7 @@ if(isset($_REQUEST['update'])){
   exit();
 }
 
+// Delete a post
 if(isset($_REQUEST['delete'])){
   $id = $_REQUEST['id'];
 
@@ -52,7 +59,6 @@ if(isset($_REQUEST['delete'])){
   header("Location: index.php?info=deleted");
   exit();
 }
-
 
 
 ?>
